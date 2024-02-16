@@ -1,0 +1,20 @@
+{
+  "name": "toodbe-chat-app",
+  "version": "1.0.0",
+  "main": "server.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MLO-OLAGUNJU/Toodbe-chat-app.git"
+  },
+  "author": "OLAGUNJU Oladele Emmanuel <149441709+MLO-OLAGUNJU@users.noreply.github.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/MLO-OLAGUNJU/Toodbe-chat-app/issues"
+  },
+  "homepage": "https://github.com/MLO-OLAGUNJU/Toodbe-chat-app#readme",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "description": ""
+}
