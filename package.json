@@ -13,7 +13,7 @@
   },
   "homepage": "https://github.com/MLO-OLAGUNJU/Toodbe-chat-app#readme",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "server": "nodemon backend/server.js"
   },
   "keywords": [],
   "description": "",
