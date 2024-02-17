@@ -15,6 +15,7 @@
   "scripts": {
     "server": "nodemon backend/server.js"
   },
+  "type": "module",
   "keywords": [],
   "description": "",
   "dependencies": {
