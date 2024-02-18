@@ -1,4 +1,5 @@
 import User from "../models/user.model.js";
+import bcrypt from "bcryptjs";
 
 export const signup = async (req, res) => {
   try {
@@ -18,6 +19,8 @@ export const signup = async (req, res) => {
     }
 
     //HASH PASSWORD HERE
+    const salt = await bcrypt.genSalt(10);
+    const hashedPassword = await bcrypt.hashPassword(password, salt);
     //https://avatar-placeholder.iran.liara.run/
 
     const boyProfilePic = `https://avatar.iran.liara.run/public/boy?username=${username}`;
@@ -26,7 +29,7 @@ export const signup = async (req, res) => {
     const newUser = new User({
       fullName,
       username,
-      password,
+      password: hashedPassword,
       gender,
       profilePic: gender === "male" ? boyProfilePic : girlProfilePic,
     });
@@ -41,8 +44,10 @@ export const signup = async (req, res) => {
     });
   } catch (error) {
     res.status(500).json({
-      error: "Server Error",
+      error: "Internal Server Error",
     });
+
+    console.log("Error in signup controller", error.message);
   }
 };
 export const login = (req, res) => {
