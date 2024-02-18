@@ -8,6 +8,9 @@ const PORT = process.env.PORT || 5000;
 
 dotenv.config();
 
+app.use(express.json());
+// app.use(express.urlencoded({ extended: true }));
+
 app.use("/api/auth", authRoutes);
 
 // app.get("/", (req, res) => {
