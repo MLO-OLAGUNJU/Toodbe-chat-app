@@ -32,7 +32,18 @@ export const signup = async (req, res) => {
     });
 
     await newUser.save();
-  } catch (error) {}
+
+    res.status(201).json({
+      _id: newUser._id,
+      fullName: newUser.fullName,
+      username: newUser.username,
+      profilePic: newUser.profilePic,
+    });
+  } catch (error) {
+    res.status(500).json({
+      error: "Server Error",
+    });
+  }
 };
 export const login = (req, res) => {
   console.log("loginUser");
