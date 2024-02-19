@@ -5,7 +5,7 @@ import LogoutButton from "./LogoutButton";
 
 const Sidebar = () => {
   return (
-    <div className="border-r border-blue-600 p-6 flex flex-col">
+    <div className="border-r border-blue-600 p-4 flex flex-col">
       <SearchInput />
       <div className="divider px-3"></div>
       <Conversations />
