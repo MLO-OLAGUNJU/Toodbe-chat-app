@@ -4,7 +4,7 @@ import ChekBox from "./ChekBox";
 const SignUp = () => {
   return (
     <>
-      <main className="w-[80%] h-[100%] flex items-center justify-between mx-auto max-[768px]:flex-col max-[768px]:justify-center max-[480px]:mr-20">
+      <main className="w-[80%] h-[80%] flex items-center justify-between mx-auto max-[768px]:flex-col max-[768px]:justify-center max-[480px]:mr-20">
         <div className=" w-60 max-[768px]:w-[150px] flex justify-center items-center flex-col max-[480px]:pl-10">
           <img className="w-full" src="/Toodbe-nobg.png" alt="Toodbe Logo" />
         </div>
