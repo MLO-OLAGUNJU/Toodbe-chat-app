@@ -4,3 +4,25 @@ body {
   /* background-color: #f5f5f5; */
   font-family: "Poppins", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
+
+/*Login component*/
+@media (max-width: 768px) {
+  .main {
+    height: 100vh;
+    flex-direction: column;
+    justify-content: center;
+    width: 100vw;
+  }
+  .logo {
+    width: 100px;
+    height: 100px;
+  }
+  .authinput {
+    width: 100%;
+  }
+  .continer {
+    width: 100%;
+    margin: 0;
+    padding: 5px;
+  }
+}
