@@ -3,12 +3,12 @@ import React from "react";
 const Login = () => {
   return (
     <>
-      <main className="w-[80%] h-[80%] flex items-center justify-between mx-auto main">
+      <main className="w-[80%] h-[80%] flex items-center justify-between mx-auto">
         <div className=" w-60">
           <img className="w-full" src="/Toodbe-nobg.png" alt="Toodbe Logo" />
         </div>
         <div className="flex flex-col items-center justify-center min-w-96 mx-auto ">
-          <div className="w-full p-12 border-blue-600 border-2 rounded-lg shadow-md bg-gray-400 bg-clip-padding backdrop-filter backdrop-blur-lg bg-opacity-0 continer">
+          <div className="w-full p-12 border-blue-600 border-2 rounded-lg shadow-md bg-gray-400 bg-clip-padding backdrop-filter backdrop-blur-lg bg-opacity-0">
             <h1 className=" text-5xl font-semibold text-center text-gray-300">
               Sign In <span className=" text-blue-600">ToodBE.</span>
             </h1>

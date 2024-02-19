@@ -4,12 +4,3 @@ body {
   /* background-color: #f5f5f5; */
   font-family: "Poppins", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
-
-/*Login component*/
-
-@media (max-width: 768px) {
-  .main {
-    display: block;
-    display: none;
-  }
-}
