@@ -1,4 +1,6 @@
 import React from "react";
+import { FaSearch } from "react-icons/fa";
+import Conversations from "./Conversations";
 
 const SearchInput = () => {
   return (
@@ -9,7 +11,7 @@ const SearchInput = () => {
         className="input input-bordered rounded-full focus:border-blue-600"
       />
       <button type="submit" className="btn btn-circle bg-blue-600 text-white">
-        Icon
+        <FaSearch className="w-6 h-6 outline-none" />
       </button>
     </form>
   );
