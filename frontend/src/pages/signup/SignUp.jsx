@@ -24,7 +24,7 @@ const SignUp = () => {
                   type="text"
                   autoFocus
                   placeholder="Austin Walker"
-                  className="w-[500px] input input-bordered h-14 focus:border-blue-600"
+                  className="w-full input input-bordered h-10 focus:border-blue-600 authinput"
                 />
               </div>
 
@@ -37,7 +37,7 @@ const SignUp = () => {
                 <input
                   type="text"
                   placeholder="austinwalker"
-                  className="w-[500px] input input-bordered h-14 focus:border-blue-600"
+                  className="w-full input input-bordered h-10 focus:border-blue-600 authinput"
                 />
               </div>
             </form>

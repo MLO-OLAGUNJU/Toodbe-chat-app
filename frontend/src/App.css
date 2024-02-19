@@ -6,23 +6,10 @@ body {
 }
 
 /*Login component*/
+
 @media (max-width: 768px) {
   .main {
-    height: 100vh;
-    flex-direction: column;
-    justify-content: center;
-    width: 100vw;
-  }
-  .logo {
-    width: 100px;
-    height: 100px;
-  }
-  .authinput {
-    width: 100%;
-  }
-  .continer {
-    width: 100%;
-    margin: 0;
-    padding: 5px;
+    display: block;
+    display: none;
   }
 }
