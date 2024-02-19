@@ -35,7 +35,7 @@ export const sendMessages = async (req, res) => {
     //or
     //this will run in parallel
 
-    await Promise.all([conversation.save(), conversation.save()]);
+    await Promise.all([conversation.save(), newMessage.save()]);
 
     res.status(201).json(newMessage);
   } catch (error) {
@@ -52,7 +52,11 @@ export const getMessages = async (req, res) => {
       participants: { $all: [senderId, userToChatId] },
     }).populate("messages"); //NOT REFERENCE BUT ACTUAL MESSAGES
 
-    res.status(200).json(conversation.messages);
+    if (!conversation) return res.status(200).json([]);
+
+    const messages = conversation.messages;
+
+    res.status(200).json(messages);
   } catch (error) {
     console.log("Error in getMessages contoller: ", error.message);
     res.status(500).json({ error: "Internal server error" });
