@@ -1,7 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import ChekBox from "./ChekBox";
+import { Link } from "react-router-dom";
 
 const SignUp = () => {
+  const [inputs, setInputs] = useState({
+    fullName: "",
+    username: "",
+    password: "",
+    confirmPassword: "",
+    gender: "",
+  });
   return (
     <>
       <main className="w-[80%] h-[80%] flex items-center justify-between mx-auto max-[768px]:flex-col max-[768px]:justify-center max-[480px]:mr-20">
@@ -9,10 +17,9 @@ const SignUp = () => {
           <img className="w-full" src="/Toodbe-nobg.png" alt="Toodbe Logo" />
         </div>
         <div className="flex flex-col items-center justify-center min-w-96 mx-auto">
-          <div className="w-full p-12 border-blue-600 border-2 rounded-lg shadow-md bg-gray-400 bg-clip-padding backdrop-filter backdrop-blur-lg bg-opacity-0">
+          <div className="w-full p-4 px-12 border-blue-600 border-2 rounded-lg shadow-md bg-gray-400 bg-clip-padding backdrop-filter backdrop-blur-lg bg-opacity-0">
             <h1 className=" max-[480px]:text-3xl text-5xl font-semibold text-center text-gray-300">
-              Join <span className=" text-blue-600">ToodBE</span>
-              <span className="max-[480px]:hidden"> Today.</span>
+              Join <span className=" text-blue-600">ToodBE.</span>
             </h1>
 
             <form>
@@ -26,6 +33,7 @@ const SignUp = () => {
                   type="text"
                   autoFocus
                   placeholder="Austin Walker"
+                  input={inputs.fullName}
                   className="w-full input input-bordered h-10 focus:border-blue-600 "
                 />
               </div>
@@ -72,12 +80,12 @@ const SignUp = () => {
               {/* Gender checkbox */}
               <ChekBox />
 
-              <a
-                href="#"
+              <Link
+                to="/login"
                 className="text-sm  hover:underline hover:text-blue-600 mt-2 inline-block"
               >
                 Already have an account?
-              </a>
+              </Link>
 
               <div>
                 <button className="btn btn-block btn-sm mt-2 bg-blue-600">
