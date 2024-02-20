@@ -11,6 +11,10 @@ const SignUp = () => {
     gender: "",
   });
 
+  const handleCheckBoxChange = (gender) => {
+    setInputs({ ...inputs, gender });
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(inputs);
@@ -98,7 +102,10 @@ const SignUp = () => {
               </div>
 
               {/* Gender checkbox */}
-              <ChekBox />
+              <ChekBox
+                onCheckboxChange={handleCheckBoxChange}
+                selectedGender={inputs.gender}
+              />
 
               <Link
                 to="/login"
