@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { signup } from "../../../backend/controllers/auth.controllers";
 
 const useSignUp = () => {
   const [loading, setLoading] = useState(false);
@@ -21,7 +22,22 @@ const useSignUp = () => {
 
     setLoading(true);
     try {
-      const res = await fetch("http://localhost:5000/api/auth/join");
+      const res = await fetch("http://localhost:5000/api/auth/join", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          fullName,
+          username,
+          password,
+          confirmPassword,
+          gender,
+        }),
+      });
+
+      const data = await res.json();
+      console.log(data);
     } catch (error) {
       toast.error(error.message);
     } finally {
@@ -29,6 +45,8 @@ const useSignUp = () => {
     }
   };
 };
+
+return { loading, signup };
 
 export default useSignUp;
 
