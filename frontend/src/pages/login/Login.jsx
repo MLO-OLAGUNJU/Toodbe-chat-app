@@ -1,9 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { Input } from "@material-tailwind/react";
 import "./login.css";
+import useLogin from "../../hooks/useLogin";
 
 const Login = () => {
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+
+  const { loading, login } = useLogin();
+  const Handlesubmit = async (e) => {
+    e.preventDefault();
+    await login(username, password);
+  };
   return (
     <>
       <main className="lolly w-[80%] h-[80%] flex items-center justify-between mx-auto">
@@ -16,15 +25,13 @@ const Login = () => {
               Sign In <span className=" text-blue-600">ToodBE.</span>
             </h1>
 
-            <form>
+            <form onSubmit={Handlesubmit}>
               <div className="flex w-72 flex-col gap-6 mt-5">
                 <Input
                   className="text-white"
                   variant="outlined"
-                  //   value={inputs.username}
-                  //   onChange={(e) =>
-                  //     setInputs({ ...inputs, username: e.target.value })
-                  //   }
+                  value={username}
+                  onChange={(e) => setUsername(e.target.value)}
                   label="Username"
                   color="blue"
                 />
@@ -36,10 +43,8 @@ const Login = () => {
                   type="password"
                   label="Password"
                   color="blue"
-                  // value={inputs.password}
-                  // onChange={(e) =>
-                  //   setInputs({ ...inputs, password: e.target.value })
-                  // }
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
                 />
               </div>
 
@@ -51,8 +56,15 @@ const Login = () => {
               </Link>
 
               <div>
-                <button className="flex w-72 flex-col gap-6 mt-5 btn btn-block btn-sm mt-2 bg-blue-600">
-                  Sign In
+                <button
+                  className="flex w-72 flex-col gap-6 mt-5 btn btn-block btn-sm mt-2 bg-blue-600"
+                  disabled={loading}
+                >
+                  {loading ? (
+                    <span className="loading loading-spinner"></span>
+                  ) : (
+                    " Sign In"
+                  )}
                 </button>
               </div>
             </form>
