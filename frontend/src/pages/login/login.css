@@ -1,0 +1,19 @@
+@media (max-width: 768px) {
+  .lolly {
+    flex-direction: column;
+    justify-content: center;
+  }
+  .logodiv {
+    width: 200px;
+  }
+}
+@media (max-width: 480px) {
+  .lolly {
+    flex-direction: column;
+    justify-content: center;
+  }
+  .logodiv {
+    margin-left: 10px;
+    width: 100px;
+  }
+}
