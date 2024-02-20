@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { Input } from "@material-tailwind/react";
 
 const Login = () => {
   return (
@@ -15,30 +16,29 @@ const Login = () => {
             </h1>
 
             <form>
-              <div>
-                <label className="label p-2 ">
-                  <span className="text-base  text-blue-600 label-text">
-                    Username
-                  </span>
-                </label>
-                <input
-                  type="text"
-                  autoFocus
-                  placeholder="Enter username"
-                  className="w-full input input-bordered h-10 focus:border-blue-600 "
+              <div className="flex w-72 flex-col gap-6 mt-5">
+                <Input
+                  className="text-white"
+                  variant="outlined"
+                  //   value={inputs.username}
+                  //   onChange={(e) =>
+                  //     setInputs({ ...inputs, username: e.target.value })
+                  //   }
+                  label="Username"
+                  color="blue"
                 />
               </div>
 
-              <div>
-                <label className="label p-2">
-                  <span className="text-base  text-blue-600 label-text">
-                    Password
-                  </span>
-                </label>
-                <input
+              <div className="flex w-72 flex-col gap-6 mt-5">
+                <Input
+                  className="text-white"
                   type="password"
-                  placeholder="Enter password"
-                  className="w-full input input-bordered h-10 focus:border-blue-600 "
+                  label="Password"
+                  color="blue"
+                  // value={inputs.password}
+                  // onChange={(e) =>
+                  //   setInputs({ ...inputs, password: e.target.value })
+                  // }
                 />
               </div>
 
