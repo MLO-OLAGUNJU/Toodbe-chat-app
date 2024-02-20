@@ -50,7 +50,7 @@ const Login = () => {
               </Link>
 
               <div>
-                <button className="btn btn-block btn-sm mt-2 bg-blue-600">
+                <button className="flex w-72 flex-col gap-6 mt-5 btn btn-block btn-sm mt-2 bg-blue-600">
                   Sign In
                 </button>
               </div>
