@@ -1,10 +1,11 @@
-import React from "react";
 import Messages from "./Messages";
 import MessageInput from "./MessageInput";
 import NoChatSelected from "./NoChatSelected";
+import React from "react";
 
 const MessageContainer = () => {
   const noChatSelected = true;
+
   return (
     <div className=" w-[100%] flex flex-col">
       {noChatSelected ? (
