@@ -10,6 +10,8 @@ const SignUp = () => {
     confirmPassword: "",
     gender: "",
   });
+
+  const handleSubmit = () => {};
   return (
     <>
       <main className="w-[80%] h-[80%] flex items-center justify-between mx-auto max-[768px]:flex-col max-[768px]:justify-center max-[480px]:mr-20">
@@ -22,7 +24,7 @@ const SignUp = () => {
               Join <span className=" text-blue-600">ToodBE.</span>
             </h1>
 
-            <form>
+            <form onSubmit={handleSubmit}>
               <div>
                 <label className="label p-2 ">
                   <span className="text-base  text-blue-600 label-text">
@@ -34,6 +36,9 @@ const SignUp = () => {
                   autoFocus
                   placeholder="Austin Walker"
                   input={inputs.fullName}
+                  onChange={(e) =>
+                    setInputs({ ...inputs, fullName: e.target.value })
+                  }
                   className="w-full input input-bordered h-10 focus:border-blue-600 "
                 />
               </div>
@@ -47,6 +52,10 @@ const SignUp = () => {
                 <input
                   type="text"
                   placeholder="austinwalker"
+                  value={inputs.username}
+                  onChange={(e) =>
+                    setInputs({ ...inputs, username: e.target.value })
+                  }
                   className="w-full input input-bordered h-10 focus:border-blue-600 "
                 />
               </div>
@@ -60,6 +69,10 @@ const SignUp = () => {
                 <input
                   type="password"
                   placeholder="Enter Password"
+                  value={inputs.password}
+                  onChange={(e) =>
+                    setInputs({ ...inputs, password: e.target.value })
+                  }
                   className="w-full input input-bordered h-10 focus:border-blue-600 "
                 />
               </div>
@@ -73,6 +86,10 @@ const SignUp = () => {
                 <input
                   type="password"
                   placeholder="Re-enter Password"
+                  value={inputs.confirmPassword}
+                  onChange={(e) =>
+                    setInputs({ ...inputs, confirmPassword: e.target.value })
+                  }
                   className="w-full input input-bordered h-10 focus:border-blue-600 "
                 />
               </div>
