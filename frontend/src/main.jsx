@@ -5,13 +5,16 @@ import "./index.css";
 
 import { BrowserRouter } from "react-router-dom";
 import { ThemeProvider } from "@material-tailwind/react";
+import { AuthContextProvider } from "./context/AuthContext.js";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <ThemeProvider>
-      <BrowserRouter>
-        <App />
-      </BrowserRouter>
-    </ThemeProvider>
+    <BrowserRouter>
+      <AuthContextProvider>
+        <ThemeProvider>
+          <App />
+        </ThemeProvider>
+      </AuthContextProvider>
+    </BrowserRouter>
   </React.StrictMode>
 );
