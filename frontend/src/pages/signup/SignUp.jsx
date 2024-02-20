@@ -11,6 +11,15 @@ const SignUp = () => {
     confirmPassword: "",
     gender: "",
   });
+  const clear = () => {
+    setInputs({
+      fullName: "",
+      username: "",
+      password: "",
+      confirmPassword: "",
+      gender: "",
+    });
+  };
 
   const handleCheckBoxChange = (gender) => {
     setInputs({ ...inputs, gender });
@@ -18,6 +27,7 @@ const SignUp = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    clear();
     console.log(inputs);
   };
   return (
@@ -36,7 +46,6 @@ const SignUp = () => {
               <div className="flex w-72 flex-col gap-6 mt-5">
                 <Input
                   variant="outlined"
-                  autoFocus
                   className="text-white"
                   input={inputs.fullName}
                   onChange={(e) =>
@@ -75,6 +84,7 @@ const SignUp = () => {
 
               <div className="flex w-72 flex-col gap-6 mt-5">
                 <Input
+                  className="text-white"
                   type="password"
                   label="Re-enter your Password"
                   color="blue"
