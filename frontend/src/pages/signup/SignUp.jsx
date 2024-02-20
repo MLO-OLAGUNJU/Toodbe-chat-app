@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import ChekBox from "./ChekBox";
+import { Input } from "@material-tailwind/react";
 import { Link } from "react-router-dom";
 
 const SignUp = () => {
@@ -26,78 +27,61 @@ const SignUp = () => {
           <img className="w-full" src="/Toodbe-nobg.png" alt="Toodbe Logo" />
         </div>
         <div className="flex flex-col items-center justify-center min-w-96 mx-auto">
-          <div className="w-full p-4 px-12 border-blue-600 border-2 rounded-lg shadow-md bg-gray-400 bg-clip-padding backdrop-filter backdrop-blur-lg bg-opacity-0">
+          <div className="w-full p-12 border-blue-600 border-2 rounded-lg shadow-md bg-gray-400 bg-clip-padding backdrop-filter backdrop-blur-lg bg-opacity-0">
             <h1 className=" max-[480px]:text-3xl text-5xl font-semibold text-center text-gray-300">
               Join <span className=" text-blue-600">ToodBE.</span>
             </h1>
 
             <form onSubmit={handleSubmit}>
-              <div>
-                <label className="label p-2 ">
-                  <span className="text-base  text-blue-600 label-text">
-                    Full Name
-                  </span>
-                </label>
-                <input
-                  type="text"
+              <div className="flex w-72 flex-col gap-6 mt-5">
+                <Input
+                  variant="outlined"
                   autoFocus
-                  placeholder="Austin Walker"
+                  className="text-white"
                   input={inputs.fullName}
                   onChange={(e) =>
                     setInputs({ ...inputs, fullName: e.target.value })
                   }
-                  className="w-full input input-bordered h-10 focus:border-blue-600 "
+                  label="Full Name"
+                  color="blue"
                 />
               </div>
 
-              <div>
-                <label className="label p-2 ">
-                  <span className="text-base  text-blue-600 label-text">
-                    Username
-                  </span>
-                </label>
-                <input
-                  type="text"
-                  placeholder="austinwalker"
+              <div className="flex w-72 flex-col gap-6 mt-5">
+                <Input
+                  className="text-white"
+                  variant="outlined"
                   value={inputs.username}
                   onChange={(e) =>
                     setInputs({ ...inputs, username: e.target.value })
                   }
-                  className="w-full input input-bordered h-10 focus:border-blue-600 "
+                  label="Username"
+                  color="blue"
                 />
               </div>
 
-              <div>
-                <label className="label p-2 ">
-                  <span className="text-base  text-blue-600 label-text">
-                    Password
-                  </span>
-                </label>
-                <input
+              <div className="flex w-72 flex-col gap-6 mt-5">
+                <Input
+                  className="text-white"
                   type="password"
-                  placeholder="Enter Password"
+                  label="Password"
+                  color="blue"
                   value={inputs.password}
                   onChange={(e) =>
                     setInputs({ ...inputs, password: e.target.value })
                   }
-                  className="w-full input input-bordered h-10 focus:border-blue-600 "
                 />
               </div>
 
-              <div>
-                <label className="label p-2 ">
-                  <span className="text-base  text-blue-600 label-text">
-                    Confirm Password
-                  </span>
-                </label>
-                <input
+              <div className="flex w-72 flex-col gap-6 mt-5">
+                <Input
                   type="password"
-                  placeholder="Re-enter Password"
+                  label="Re-enter your Password"
+                  color="blue"
                   value={inputs.confirmPassword}
                   onChange={(e) =>
                     setInputs({ ...inputs, confirmPassword: e.target.value })
                   }
-                  className="w-full input input-bordered h-10 focus:border-blue-600 "
                 />
               </div>
 
