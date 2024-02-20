@@ -4,16 +4,16 @@
 
 ::-webkit-scrollbar {
   cursor: pointer;
-  width: 2px;
+  width: 1px;
 }
 
 ::-webkit-scrollbar-track {
   cursor: pointer;
-  background: blue;
+  background: white;
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #111519;
+  background-color: blue;
   border-radius: 5px;
 }
 
