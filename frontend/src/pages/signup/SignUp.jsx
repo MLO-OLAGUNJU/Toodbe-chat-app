@@ -11,7 +11,10 @@ const SignUp = () => {
     gender: "",
   });
 
-  const handleSubmit = () => {};
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(inputs);
+  };
   return (
     <>
       <main className="w-[80%] h-[80%] flex items-center justify-between mx-auto max-[768px]:flex-col max-[768px]:justify-center max-[480px]:mr-20">
