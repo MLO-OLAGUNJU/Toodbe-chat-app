@@ -1,19 +1,27 @@
 import React from "react";
+import useAuthContext from "../../context/AuthContext";
+import useConversation from "../../zustand/useConversation";
 
-const Message = () => {
+const Message = ({ message }) => {
+  const { authUser } = useAuthContext();
+  const { selectedConversation } = useConversation();
+  const fromMe = message.senderId === authUser._id;
+  const chatClassname = fromMe ? "chat-end" : "chat-start";
+  const profilePic = fromMe
+    ? authUser.profilePic
+    : selectedConversation?.profilePic;
+
+  const bubbleBgColor = fromMe ? "bg-blue-600" : "";
   return (
-    <div className="chat chat-end">
-      <div className="chat-image avatar">
+    <div className={`chat ${chatClassname}`}>
+      <div className={`chat-image avatar`}>
         <div className="w-10 rounded-full">
-          <img
-            src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"
-            alt=""
-          />
+          <img src={profilePic} alt="" />
         </div>
       </div>
 
-      <div className="chat-bubble text-white bg-blue-600">
-        Hi! What is your upp?
+      <div className={`chat-bubble text-white bg-blue-600 ${bubbleBgColor}`}>
+        {message.message}
       </div>
       <div className="chat-footer opacity-50 text-xs flex gap-1 items-center">
         12:42
