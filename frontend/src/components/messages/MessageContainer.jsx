@@ -8,9 +8,9 @@ const MessageContainer = () => {
   const { selectedConversation, setSelectedConversation } = useConversation();
 
   useEffect(() => {
-    //cleanup function
+    //cleanup function (unmounts)
     return () => setSelectedConversation(null);
-  }, []);
+  }, [setSelectedConversation]);
 
   return (
     <div className=" w-[100%] flex flex-col">
