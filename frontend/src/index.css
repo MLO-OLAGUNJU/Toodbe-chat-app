@@ -4,7 +4,7 @@
 
 ::-webkit-scrollbar {
   cursor: pointer;
-  width: 1px;
+  width: 8px;
 }
 
 ::-webkit-scrollbar-track {
@@ -13,7 +13,7 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: blue;
+  background-color: #111519;
   border-radius: 5px;
 }
 
