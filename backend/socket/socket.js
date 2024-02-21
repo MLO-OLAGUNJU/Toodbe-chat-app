@@ -1,7 +1,6 @@
 import { Server } from "socket.io";
 import http from "http";
 import express from "express";
-import { Socket } from "dgram";
 
 const app = express();
 
@@ -16,8 +15,9 @@ const io = new Server(server, {
 io.on("connection", (socket) => {
   console.log("a user connected", socket.id);
 
+  //socket.on() is used to listen to the events, can be used both on client and on server side
   socket.on("disconnect", () => {
-    console.log("user disconnected");
+    console.log("user disconnected", socket.id);
   });
 });
 
