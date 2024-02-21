@@ -20,6 +20,13 @@ const SearchInput = () => {
     const conversation = conversations.find((c) =>
       c.fullName.toLowerCase().includes(search.toLowerCase)
     );
+
+    if (conversation) {
+      setSelectedConversation(conversation);
+      setSearch("");
+    } else {
+      return toast.error("User not found!");
+    }
   };
   return (
     <form className="flex items-center gap-2" onSubmit={handlesubmit}>
