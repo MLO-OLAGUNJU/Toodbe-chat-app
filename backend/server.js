@@ -7,6 +7,7 @@ import userRoutes from "./routes/user.routes.js";
 
 import connectToMongoDB from "./db/connectToMongoDB.js";
 import cookieParser from "cookie-parser";
+import { app, server } from "./socket/socket.js";
 
 const app = express();
 const PORT = process.env.PORT || 5000;
