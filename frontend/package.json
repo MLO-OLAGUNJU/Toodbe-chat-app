@@ -17,6 +17,7 @@
     "react-icons": "^5.0.1",
     "react-router-dom": "^6.22.1",
     "socket.io-client": "^4.7.4",
+    "toodbe-chat-app": "file:..",
     "zustand": "^4.5.1"
   },
   "devDependencies": {
