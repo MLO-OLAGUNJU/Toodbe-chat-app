@@ -1,11 +1,16 @@
 import Messages from "./Messages";
 import MessageInput from "./MessageInput";
 import NoChatSelected from "./NoChatSelected";
-import React from "react";
+import React, { useEffect } from "react";
 import useConversation from "../../zustand/useConversation";
 
 const MessageContainer = () => {
   const { selectedConversation, setSelectedConversation } = useConversation();
+
+  useEffect(() => {
+    //cleanup function
+    return () => setSelectedConversation(null);
+  }, []);
 
   return (
     <div className=" w-[100%] flex flex-col">
