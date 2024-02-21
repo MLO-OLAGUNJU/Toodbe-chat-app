@@ -12,15 +12,6 @@ const SignUp = () => {
     confirmPassword: "",
     gender: "",
   });
-  const clear = () => {
-    setInputs({
-      fullName: "",
-      username: "",
-      password: "",
-      confirmPassword: "",
-      gender: "",
-    });
-  };
 
   const { loading, signup } = useSignUp();
 
@@ -30,7 +21,6 @@ const SignUp = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    clear();
     await signup(inputs);
   };
   return (
