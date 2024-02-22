@@ -2,12 +2,15 @@ import React from "react";
 import Conversation from "./Conversation";
 import useGetConversations from "../../hooks/useGetConversations";
 
-const Conversations = () => {
+const Conversations = ({ showChat, handleToggle }) => {
   const { loading, conversations } = useGetConversations();
+
   return (
     <div className="py-2 flex flex-col overflow-auto">
       {conversations.map((conversation, idx) => (
         <Conversation
+          showChat={showChat}
+          handleToggle={handleToggle}
           key={conversation._id}
           conversation={conversation}
           lastIdx={idx === conversations.length - 1}
