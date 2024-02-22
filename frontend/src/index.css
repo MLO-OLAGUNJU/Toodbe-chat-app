@@ -7,6 +7,7 @@
 body {
   background-color: #1d232a;
   font-family: "Poppins", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: white;
 }
 
 ::-webkit-scrollbar {
@@ -63,9 +64,11 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-right: 20px;
   }
   .logoCarrier {
     width: 100px;
+  }
+  .shift {
+    margin-right: 20px;
   }
 }
