@@ -71,6 +71,9 @@ body {
   .shift {
     margin: 0;
   }
+  .hide-on-mobile {
+    display: none;
+  }
 }
 @media (max-width: 1114px) {
   .carrier {
