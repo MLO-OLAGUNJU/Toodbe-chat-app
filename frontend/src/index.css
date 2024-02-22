@@ -71,7 +71,11 @@ body {
   .shift {
     margin: 0;
   }
-  .hide-on-mobile {
+  .leftside {
+    width: 100%;
+  }
+
+  .rightside {
     display: none;
   }
 }
