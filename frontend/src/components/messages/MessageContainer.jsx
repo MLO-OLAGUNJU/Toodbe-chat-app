@@ -16,7 +16,7 @@ const MessageContainer = ({ showChat, handleToggle }) => {
   return (
     <div
       className={
-        showChat
+        !showChat
           ? "w-[100%] flex flex-col max-[768px]:flex"
           : "w-[100%] flex flex-col max-[768px]:hidden"
       }
