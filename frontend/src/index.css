@@ -58,7 +58,7 @@ body {
   }
 }
 
-@media (max-width: 728px) {
+@media (max-width: 768px) {
   .carrier {
     display: flex;
     flex-direction: column;
