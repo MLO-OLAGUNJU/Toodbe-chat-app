@@ -1,4 +1,5 @@
 import React from "react";
+import useConversation from "../../zustand/useConversation";
 import { useSocketContext } from "../../context/SocketContext";
 
 const Conversation = ({ conversation, lastIdx, onClick }) => {
@@ -36,9 +37,7 @@ const Conversation = ({ conversation, lastIdx, onClick }) => {
 
 export default Conversation;
 
-/* import React from "react";
-import useConversation from "../../zustand/useConversation";
-import { useSocketContext } from "../../context/SocketContext";
+/* 
 
 const Conversation = ({ conversation, lastIdx }) => {
   const { selectedConversation, setSelectedConversation } = useConversation();
