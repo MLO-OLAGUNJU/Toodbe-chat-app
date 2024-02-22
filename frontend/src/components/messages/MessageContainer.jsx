@@ -17,8 +17,8 @@ const MessageContainer = ({ showChat, handleToggle }) => {
     <div
       className={
         !showChat
-          ? "w-[100%] flex flex-col max-[768px]:flex"
-          : "w-[100%] flex flex-col max-[768px]:hidden"
+          ? "w-[100%] flex flex-col"
+          : "w-[100%] flex-col hidden lg:flex"
       }
     >
       {!selectedConversation ? (
@@ -27,7 +27,7 @@ const MessageContainer = ({ showChat, handleToggle }) => {
         <>
           {/* Header */}
           <div className="bg-blue-600 px-4 flex items-center gap-3 py-2 mb-2">
-            <FaLeftLong onClick={handleToggle} className="min-[768px]:hidden" />
+            <FaLeftLong onClick={handleToggle} className="lg:hidden" />
             <span className="label-text">To:</span>{" "}
             <span className="text-gray-900 font-bold">
               {selectedConversation.fullName}
