@@ -71,13 +71,6 @@ body {
   .shift {
     margin: 0;
   }
-  .leftside {
-    width: 100%;
-  }
-
-  .rightside {
-    display: none;
-  }
 }
 
 @media (max-width: 1114px) {
