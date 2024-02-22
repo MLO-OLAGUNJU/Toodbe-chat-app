@@ -72,3 +72,17 @@ body {
     margin: 0;
   }
 }
+@media (max-width: 1114px) {
+  .carrier {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .logoCarrier {
+    width: 200px;
+  }
+  .shift {
+    margin: 0;
+  }
+}
