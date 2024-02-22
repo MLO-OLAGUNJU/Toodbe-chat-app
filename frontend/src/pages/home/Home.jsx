@@ -6,8 +6,8 @@ const Home = () => {
   return (
     <>
       <div className="flex w-full h-full rounded-lg overflow-hidden bg-gray-400 bg-clip-padding backdrop-filter backdrop-blur-lg bg-opacity-0">
-        <Sidebar className="leftside" />
-        <MessageContainer className="rightside" />
+        <Sidebar />
+        <MessageContainer />
       </div>
     </>
   );
