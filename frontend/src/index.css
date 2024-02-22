@@ -56,3 +56,16 @@ body {
     transform: translate3d(4px, 0, 0);
   }
 }
+
+@media (max-width: 480px) {
+  .carrier {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-right: 20px;
+  }
+  .logoCarrier {
+    width: 100px;
+  }
+}
