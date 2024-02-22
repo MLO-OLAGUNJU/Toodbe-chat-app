@@ -15,7 +15,7 @@ const Conversation = ({ showChat, handleToggle, conversation, lastIdx }) => {
       ${isSelected ? "bg-blue-600" : ""}`}
         onClick={() => {
           setSelectedConversation(conversation);
-          handleToggle;
+          handleToggle();
         }}
       >
         <div className={`avatar ${isOnline ? "online" : "offline"}`}>
