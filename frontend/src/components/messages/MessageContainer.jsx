@@ -7,7 +7,6 @@ import { FaLeftLong } from "react-icons/fa6";
 import { useSocket } from "../../context/SocketContext";
 import { useRecoilValue, useSetRecoilState } from "recoil";
 import userAtom from "../../atoms/userAtom.js";
-import { useSocket } from "../context/SocketContext.jsx";
 
 const MessageContainer = ({ showChat, handleToggle }) => {
   const { selectedConversation, setSelectedConversation } = useConversation();
