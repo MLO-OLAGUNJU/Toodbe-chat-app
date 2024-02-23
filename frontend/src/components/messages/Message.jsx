@@ -31,7 +31,7 @@ const Message = ({ message }) => {
       </div>
       <div>
         <IoCheckmarkDoneSharp
-          className={`${message.seen}? text-green-900 : text-black`}
+          className={`${message.seen ? "text-green-900" : "text-black"}`}
         />
       </div>
       <div className="chat-footer opacity-50 text-xs flex gap-1 items-center">
