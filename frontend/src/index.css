@@ -73,6 +73,7 @@ body {
   }
   .leftside {
     width: 100%;
+    border: none;
   }
 }
 
