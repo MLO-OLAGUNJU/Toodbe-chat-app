@@ -28,13 +28,7 @@ const Message = ({ message }) => {
       >
         {message.message}
       </div>
-      <div
-        className={`self-end ml-1 ${
-          message.seen ? "text-[#1d232a]" : ""
-        } font-bold`}
-      >
-        <BsCheck2All className="w-4 h-4" />
-      </div>
+      <BsCheck2All className="w-4 h-4" />
 
       <div className="chat-footer opacity-50 text-xs flex gap-1 items-center">
         {formattedTime}
