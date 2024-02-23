@@ -29,9 +29,7 @@ const Message = ({ message }) => {
         {message.message}
       </div>
       <div
-        className={`self-end ml-1 ${
-          message.seen ? "text-white" : "text-black"
-        } font-bold`}
+        className={`self-end ml-1 ${message.seen ? "#1d232a" : ""} font-bold`}
       >
         <BsCheck2All className="w-4 h-4" />
       </div>
