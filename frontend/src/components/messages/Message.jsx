@@ -30,13 +30,13 @@ const Message = ({ message }) => {
         {message.message}
       </div>
 
-      {!fromMe ? (
+      {fromMe && (
         <div>
           <IoCheckmarkDoneSharp
             className={`${message.seen ? "text-blue-600" : " text-gray-300"}`}
           />
         </div>
-      ) : null}
+      )}
       <div className="chat-footer opacity-50 text-xs flex gap-1 items-center">
         {formattedTime}
       </div>
