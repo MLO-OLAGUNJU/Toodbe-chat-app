@@ -5,13 +5,10 @@ import React, { useEffect, useState } from "react";
 import useConversation from "../../zustand/useConversation";
 import { FaLeftLong } from "react-icons/fa6";
 import { useSocketContext } from "../../context/SocketContext.jsx";
-import { useRecoilValue, useSetRecoilState } from "recoil";
-import userAtom from "../../atoms/userAtom.js";
 
 const MessageContainer = ({ showChat, handleToggle }) => {
   const { selectedConversation, setSelectedConversation } = useConversation();
   const [messages, setMessages] = useState([]);
-  const currentUser = useRecoilValue(userAtom);
   const { socket } = useSocketContext();
 
   useEffect(() => {
