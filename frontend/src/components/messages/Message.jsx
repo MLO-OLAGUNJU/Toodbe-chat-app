@@ -1,6 +1,7 @@
 import { useAuthContext } from "../../context/AuthContext";
 import { extractTime } from "../../utils/extractTime";
 import useConversation from "../../zustand/useConversation";
+import { IoCheckmarkDoneSharp } from "react-icons/io5";
 
 const Message = ({ message }) => {
   const { authUser } = useAuthContext();
@@ -27,7 +28,9 @@ const Message = ({ message }) => {
       >
         {message.message}
       </div>
-
+      <div className="chat-footer opacity-50 text-xs flex gap-1 items-center">
+        <IoCheckmarkDoneSharp />
+      </div>
       <div className="chat-footer opacity-50 text-xs flex gap-1 items-center">
         {formattedTime}
       </div>
