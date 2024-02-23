@@ -28,7 +28,7 @@ const Message = ({ message }) => {
       >
         {message.message}
       </div>
-      <div className="chat-footer opacity-50 text-xs flex gap-1 items-center">
+      <div>
         <IoCheckmarkDoneSharp />
       </div>
       <div className="chat-footer opacity-50 text-xs flex gap-1 items-center">
