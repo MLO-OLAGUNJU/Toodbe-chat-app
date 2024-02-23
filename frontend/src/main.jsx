@@ -14,11 +14,11 @@ ReactDOM.createRoot(document.getElementById("root")).render(
     <BrowserRouter>
       <AuthContextProvider>
         <SocketContextProvider>
-          {/* <ChakraProvider> */}
-          <ThemeProvider>
-            <App />
-          </ThemeProvider>
-          {/* </ChakraProvider> */}
+          <ChakraProvider>
+            <ThemeProvider>
+              <App />
+            </ThemeProvider>
+          </ChakraProvider>
         </SocketContextProvider>
       </AuthContextProvider>
     </BrowserRouter>
