@@ -21,7 +21,9 @@ const MessageContainer = ({ showChat, handleToggle }) => {
   }, [setSelectedConversation]);
 
   useEffect(() => {
-    const lastMessageIsFromOtherUser = messages[messages.length - 1];
+    const lastMessageIsFromOtherUser =
+      messages.length &&
+      messages[messages.length - 1].sender !== currentUser._id;
     if (lastMessageIsFromOtherUser) {
       socket.emit("markMessagesAsSeen", {
         conversationId: selectedConversation._id,
@@ -32,7 +34,7 @@ const MessageContainer = ({ showChat, handleToggle }) => {
     socket.on("messagesSeen", ({ conversationId }) => {
       if (selectedConversation._id === conversationId) {
         setMessages((prev) => {
-          const updatedMesssages = prev.map((message) => {
+          const updatedMessages = prev.map((message) => {
             if (!message.seen) {
               return {
                 ...message,
@@ -41,7 +43,7 @@ const MessageContainer = ({ showChat, handleToggle }) => {
             }
             return message;
           });
-          return updatedMesssages;
+          return updatedMessages;
         });
       }
     });
