@@ -1,7 +1,6 @@
 import { useAuthContext } from "../../context/AuthContext";
 import { extractTime } from "../../utils/extractTime";
 import useConversation from "../../zustand/useConversation";
-import { BsCheck2All } from "react-icons/bs";
 
 const Message = ({ message }) => {
   const { authUser } = useAuthContext();
@@ -27,7 +26,6 @@ const Message = ({ message }) => {
         className={`chat-bubble text-white ${bubbleBgColor} ${shakeClass} pb-2`}
       >
         {message.message}
-        <BsCheck2All />
       </div>
 
       <div className="chat-footer opacity-50 text-xs flex gap-1 items-center">
