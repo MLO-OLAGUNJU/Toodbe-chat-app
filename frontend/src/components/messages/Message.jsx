@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { useAuthContext } from "../../context/AuthContext";
 import { extractTime } from "../../utils/extractTime";
 import useConversation from "../../zustand/useConversation";
@@ -29,7 +30,9 @@ const Message = ({ message }) => {
         {message.message}
       </div>
       <div>
-        <IoCheckmarkDoneSharp />
+        <IoCheckmarkDoneSharp
+          className={`${message.seen}? text-green-900 : text-black`}
+        />
       </div>
       <div className="chat-footer opacity-50 text-xs flex gap-1 items-center">
         {formattedTime}
