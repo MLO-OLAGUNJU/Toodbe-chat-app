@@ -1,17 +1,51 @@
 import Messages from "./Messages";
 import MessageInput from "./MessageInput";
 import NoChatSelected from "./NoChatSelected";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import useConversation from "../../zustand/useConversation";
 import { FaLeftLong } from "react-icons/fa6";
+import { useSocket } from "../../context/SocketContext";
+import { useRecoilValue, useSetRecoilState } from "recoil";
+import userAtom from "../../atoms/userAtom.js";
+import { useSocket } from "../context/SocketContext.jsx";
 
 const MessageContainer = ({ showChat, handleToggle }) => {
   const { selectedConversation, setSelectedConversation } = useConversation();
+  const [messages, setMessages] = useState([]);
+  const currentUser = useRecoilValue(userAtom);
+  const { socket } = useSocket();
 
   useEffect(() => {
     //cleanup function (unmounts)
     return () => setSelectedConversation(null);
   }, [setSelectedConversation]);
+
+  useEffect(() => {
+    const lastMessageIsFromOtherUser = messages[messages.length - 1];
+    if (lastMessageIsFromOtherUser) {
+      socket.emit("markMessagesAsSeen", {
+        conversationId: selectedConversation._id,
+        userId: selectedConversation.userId,
+      });
+    }
+
+    socket.on("messagesSeen", ({ conversationId }) => {
+      if (selectedConversation._id === conversationId) {
+        setMessages((prev) => {
+          const updatedMesssages = prev.map((message) => {
+            if (!message.seen) {
+              return {
+                ...message,
+                seen: true,
+              };
+            }
+            return message;
+          });
+          return updatedMesssages;
+        });
+      }
+    });
+  }, [socket, currentUser._id, messages, selectedConversation]);
 
   return (
     <div
